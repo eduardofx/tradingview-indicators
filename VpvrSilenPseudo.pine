@@ -1,0 +1,1260 @@
+// This source code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © The_Silen
+
+//@version=4
+study("Silen's Pseudo VPVR / Pseudo Volume Profile Custom Range", overlay=true, max_bars_back = 1500)
+
+bar_amount = input(title = "Custom Range Bar Amount", type = input.integer, defval = 500, minval = 10, maxval = 1500)
+value_level_amount = input(title = "Value Level Amount", type = input.integer, defval = 3, minval = 1, maxval = 5) 
+
+
+float max_level = 0
+float min_level = hl2[0]
+
+if (barstate.islast)
+    for i = 1 to bar_amount
+        if (hl2[i] > max_level)
+            max_level := hl2[i]
+        if (hl2[i] < min_level)
+            min_level := hl2[i]
+    
+float level_1 = min_level
+float level_2 = min_level + ((max_level - min_level) / 30) * 1
+float level_3 = min_level + ((max_level - min_level) / 30) * 2
+float level_4 = min_level + ((max_level - min_level) / 30) * 3
+float level_5 = min_level + ((max_level - min_level) / 30) * 4
+float level_6 = min_level + ((max_level - min_level) / 30) * 5
+float level_7 = min_level + ((max_level - min_level) / 30) * 6
+float level_8 = min_level + ((max_level - min_level) / 30) * 7
+float level_9 = min_level + ((max_level - min_level) / 30) * 8
+float level_10 = min_level + ((max_level - min_level) / 30) * 9
+float level_11 = min_level + ((max_level - min_level) / 30) * 10
+float level_12 = min_level + ((max_level - min_level) / 30) * 11
+float level_13 = min_level + ((max_level - min_level) / 30) * 12
+float level_14 = min_level + ((max_level - min_level) / 30) * 13
+float level_15 = min_level + ((max_level - min_level) / 30) * 14
+float level_16 = min_level + ((max_level - min_level) / 30) * 15
+float level_17 = min_level + ((max_level - min_level) / 30) * 16
+float level_18 = min_level + ((max_level - min_level) / 30) * 17
+float level_19 = min_level + ((max_level - min_level) / 30) * 18
+float level_20 = min_level + ((max_level - min_level) / 30) * 19
+float level_21 = min_level + ((max_level - min_level) / 30) * 20
+float level_22 = min_level + ((max_level - min_level) / 30) * 21
+float level_23 = min_level + ((max_level - min_level) / 30) * 22
+float level_24 = min_level + ((max_level - min_level) / 30) * 23
+float level_25 = min_level + ((max_level - min_level) / 30) * 24
+float level_26 = min_level + ((max_level - min_level) / 30) * 25
+float level_27 = min_level + ((max_level - min_level) / 30) * 26
+float level_28 = min_level + ((max_level - min_level) / 30) * 27
+float level_29 = min_level + ((max_level - min_level) / 30) * 28
+float level_30 = min_level + ((max_level - min_level) / 30) * 29
+float level_31 = max_level
+        
+int level_1_amount = 0
+int level_2_amount = 0
+int level_3_amount = 0
+int level_4_amount = 0
+int level_5_amount = 0
+int level_6_amount = 0
+int level_7_amount = 0
+int level_8_amount = 0
+int level_9_amount = 0
+int level_10_amount = 0
+int level_11_amount = 0
+int level_12_amount = 0
+int level_13_amount = 0
+int level_14_amount = 0
+int level_15_amount = 0
+int level_16_amount = 0
+int level_17_amount = 0
+int level_18_amount = 0
+int level_19_amount = 0
+int level_20_amount = 0
+int level_21_amount = 0
+int level_22_amount = 0
+int level_23_amount = 0
+int level_24_amount = 0
+int level_25_amount = 0
+int level_26_amount = 0
+int level_27_amount = 0
+int level_28_amount = 0
+int level_29_amount = 0
+int level_30_amount = 0
+
+
+if (barstate.islast)
+    for i = 1 to bar_amount
+        if (hl2[i] > level_1 and hl2[i] < level_2)
+            level_1_amount := level_1_amount + 1
+        if (hl2[i] > level_2 and hl2[i] < level_3)
+            level_2_amount := level_2_amount + 1
+        if (hl2[i] > level_3 and hl2[i] < level_4)
+            level_3_amount := level_3_amount + 1    
+        if (hl2[i] > level_4 and hl2[i] < level_5)
+            level_4_amount := level_4_amount + 1    
+        if (hl2[i] > level_5 and hl2[i] < level_6)
+            level_5_amount := level_5_amount + 1
+        if (hl2[i] > level_6 and hl2[i] < level_7)
+            level_6_amount := level_6_amount + 1
+        if (hl2[i] > level_7 and hl2[i] < level_8)
+            level_7_amount := level_7_amount + 1
+        if (hl2[i] > level_8 and hl2[i] < level_9)
+            level_8_amount := level_8_amount + 1
+        if (hl2[i] > level_9 and hl2[i] < level_10)
+            level_9_amount := level_9_amount + 1
+        if (hl2[i] > level_10 and hl2[i] < level_11)
+            level_10_amount := level_10_amount + 1
+        if (hl2[i] > level_11 and hl2[i] < level_12)
+            level_11_amount := level_11_amount + 1
+        if (hl2[i] > level_12 and hl2[i] < level_13)
+            level_12_amount := level_12_amount + 1
+        if (hl2[i] > level_13 and hl2[i] < level_14)
+            level_13_amount := level_13_amount + 1
+        if (hl2[i] > level_14 and hl2[i] < level_15)
+            level_14_amount := level_14_amount + 1
+        if (hl2[i] > level_15 and hl2[i] < level_16)
+            level_15_amount := level_15_amount + 1
+        if (hl2[i] > level_16 and hl2[i] < level_17)
+            level_16_amount := level_16_amount + 1
+        if (hl2[i] > level_17 and hl2[i] < level_18)
+            level_17_amount := level_17_amount + 1
+        if (hl2[i] > level_18 and hl2[i] < level_19)
+            level_18_amount := level_18_amount + 1
+        if (hl2[i] > level_19 and hl2[i] < level_20)
+            level_19_amount := level_19_amount + 1
+        if (hl2[i] > level_20 and hl2[i] < level_21)
+            level_20_amount := level_20_amount + 1
+        if (hl2[i] > level_21 and hl2[i] < level_22)
+            level_21_amount := level_21_amount + 1
+        if (hl2[i] > level_22 and hl2[i] < level_23)
+            level_22_amount := level_22_amount + 1
+        if (hl2[i] > level_23 and hl2[i] < level_24)
+            level_23_amount := level_23_amount + 1
+        if (hl2[i] > level_24 and hl2[i] < level_25)
+            level_24_amount := level_24_amount + 1
+        if (hl2[i] > level_25 and hl2[i] < level_26)
+            level_25_amount := level_25_amount + 1
+        if (hl2[i] > level_26 and hl2[i] < level_27)
+            level_26_amount := level_26_amount + 1
+        if (hl2[i] > level_27 and hl2[i] < level_28)
+            level_27_amount := level_27_amount + 1
+        if (hl2[i] > level_28 and hl2[i] < level_29)
+            level_28_amount := level_28_amount + 1
+        if (hl2[i] > level_29 and hl2[i] < level_30)
+            level_29_amount := level_29_amount + 1
+        if (hl2[i] > level_30 and hl2[i] < level_31)
+            level_30_amount := level_30_amount + 1
+            
+
+
+
+
+
+int max_amount = level_1_amount
+float level_max = level_1
+int max_amount_prev = 0
+
+int max_amount_1 = 0
+float level_max_1 = 0
+int max_amount_2 = 0
+float level_max_2 = 0
+int max_amount_3 = 0
+float level_max_3 = 0
+int max_amount_4 = 0
+float level_max_4 = 0
+int max_amount_5 = 0
+float level_max_5 = 0
+
+
+if (barstate.islast)
+    if (level_2_amount > max_amount)
+        max_amount := level_2_amount
+        level_max := level_2
+    if (level_3_amount > max_amount)
+        max_amount := level_3_amount
+        level_max := level_3
+    if (level_4_amount > max_amount)
+        max_amount := level_4_amount
+        level_max := level_4
+    if (level_5_amount > max_amount)
+        max_amount := level_5_amount
+        level_max := level_5
+    if (level_6_amount > max_amount)
+        max_amount := level_6_amount
+        level_max := level_6
+    if (level_7_amount > max_amount)
+        max_amount := level_7_amount
+        level_max := level_7
+    if (level_8_amount > max_amount)
+        max_amount := level_8_amount
+        level_max := level_8
+    if (level_9_amount > max_amount)
+        max_amount := level_9_amount
+        level_max := level_9
+    if (level_10_amount > max_amount)
+        max_amount := level_10_amount
+        level_max := level_10
+    if (level_11_amount > max_amount)
+        max_amount := level_11_amount
+        level_max := level_11
+    if (level_12_amount > max_amount)
+        max_amount := level_12_amount
+        level_max := level_12
+    if (level_13_amount > max_amount)
+        max_amount := level_13_amount
+        level_max := level_13
+    if (level_14_amount > max_amount)
+        max_amount := level_14_amount
+        level_max := level_14
+    if (level_15_amount > max_amount)
+        max_amount := level_15_amount
+        level_max := level_15
+    if (level_16_amount > max_amount)
+        max_amount := level_16_amount
+        level_max := level_16
+    if (level_17_amount > max_amount)
+        max_amount := level_17_amount
+        level_max := level_17
+    if (level_18_amount > max_amount)
+        max_amount := level_18_amount
+        level_max := level_18
+    if (level_19_amount > max_amount)
+        max_amount := level_19_amount
+        level_max := level_19
+    if (level_20_amount > max_amount)
+        max_amount := level_20_amount
+        level_max := level_20
+    if (level_21_amount > max_amount)
+        max_amount := level_21_amount
+        level_max := level_21
+    if (level_22_amount > max_amount)
+        max_amount := level_22_amount
+        level_max := level_22
+    if (level_23_amount > max_amount)
+        max_amount := level_23_amount
+        level_max := level_23
+    if (level_24_amount > max_amount)
+        max_amount := level_24_amount
+        level_max := level_24
+    if (level_25_amount > max_amount)
+        max_amount := level_25_amount
+        level_max := level_25
+    if (level_26_amount > max_amount)
+        max_amount := level_26_amount
+        level_max := level_26
+    if (level_27_amount > max_amount)
+        max_amount := level_27_amount
+        level_max := level_27
+    if (level_28_amount > max_amount)
+        max_amount := level_28_amount
+        level_max := level_28
+    if (level_29_amount > max_amount)
+        max_amount := level_29_amount
+        level_max := level_29
+    if (level_30_amount > max_amount)
+        max_amount := level_30_amount
+        level_max := level_30
+        
+    max_amount_1 := max_amount
+    level_max_1 := level_max
+    max_amount_prev := max_amount
+    max_amount := level_1_amount
+    level_max := level_1
+
+
+if (barstate.islast and value_level_amount >= 2)
+    if (level_2_amount > max_amount and level_2_amount < max_amount_prev)
+        max_amount := level_2_amount
+        level_max := level_2
+    if (level_3_amount > max_amount and level_3_amount < max_amount_prev)
+        max_amount := level_3_amount
+        level_max := level_3
+    if (level_4_amount > max_amount and level_4_amount < max_amount_prev)
+        max_amount := level_4_amount
+        level_max := level_4
+    if (level_5_amount > max_amount and level_5_amount < max_amount_prev)
+        max_amount := level_5_amount
+        level_max := level_5
+    if (level_6_amount > max_amount and level_6_amount < max_amount_prev)
+        max_amount := level_6_amount
+        level_max := level_6
+    if (level_7_amount > max_amount and level_7_amount < max_amount_prev)
+        max_amount := level_7_amount
+        level_max := level_7
+    if (level_8_amount > max_amount and level_8_amount < max_amount_prev)
+        max_amount := level_8_amount
+        level_max := level_8
+    if (level_9_amount > max_amount and level_9_amount < max_amount_prev)
+        max_amount := level_9_amount
+        level_max := level_9
+    if (level_10_amount > max_amount and level_10_amount < max_amount_prev)
+        max_amount := level_10_amount
+        level_max := level_10
+    if (level_11_amount > max_amount and level_11_amount < max_amount_prev)
+        max_amount := level_11_amount
+        level_max := level_11
+    if (level_12_amount > max_amount and level_12_amount < max_amount_prev)
+        max_amount := level_12_amount
+        level_max := level_12
+    if (level_13_amount > max_amount and level_13_amount < max_amount_prev)
+        max_amount := level_13_amount
+        level_max := level_13
+    if (level_14_amount > max_amount and level_14_amount < max_amount_prev)
+        max_amount := level_14_amount
+        level_max := level_14
+    if (level_15_amount > max_amount and level_15_amount < max_amount_prev)
+        max_amount := level_15_amount
+        level_max := level_15
+    if (level_16_amount > max_amount and level_16_amount < max_amount_prev)
+        max_amount := level_16_amount
+        level_max := level_16
+    if (level_17_amount > max_amount and level_17_amount < max_amount_prev)
+        max_amount := level_17_amount
+        level_max := level_17
+    if (level_18_amount > max_amount and level_18_amount < max_amount_prev)
+        max_amount := level_18_amount
+        level_max := level_18
+    if (level_19_amount > max_amount and level_19_amount < max_amount_prev)
+        max_amount := level_19_amount
+        level_max := level_19
+    if (level_20_amount > max_amount and level_20_amount < max_amount_prev)
+        max_amount := level_20_amount
+        level_max := level_20
+    if (level_21_amount > max_amount and level_21_amount < max_amount_prev)
+        max_amount := level_21_amount
+        level_max := level_21
+    if (level_22_amount > max_amount and level_22_amount < max_amount_prev)
+        max_amount := level_22_amount
+        level_max := level_22
+    if (level_23_amount > max_amount and level_23_amount < max_amount_prev)
+        max_amount := level_23_amount
+        level_max := level_23
+    if (level_24_amount > max_amount and level_24_amount < max_amount_prev)
+        max_amount := level_24_amount
+        level_max := level_24
+    if (level_25_amount > max_amount and level_25_amount < max_amount_prev)
+        max_amount := level_25_amount
+        level_max := level_25
+    if (level_26_amount > max_amount and level_26_amount < max_amount_prev)
+        max_amount := level_26_amount
+        level_max := level_26
+    if (level_27_amount > max_amount and level_27_amount < max_amount_prev)
+        max_amount := level_27_amount
+        level_max := level_27
+    if (level_28_amount > max_amount and level_28_amount < max_amount_prev)
+        max_amount := level_28_amount
+        level_max := level_28
+    if (level_29_amount > max_amount and level_29_amount < max_amount_prev)
+        max_amount := level_29_amount
+        level_max := level_29
+    if (level_30_amount > max_amount and level_30_amount < max_amount_prev)
+        max_amount := level_30_amount
+        level_max := level_30
+
+    max_amount_2 := max_amount
+    level_max_2 := level_max
+    max_amount_prev := max_amount
+    max_amount := level_1_amount
+    level_max := level_1
+
+
+if (barstate.islast and value_level_amount >= 3)
+    if (level_2_amount > max_amount and level_2_amount < max_amount_prev)
+        max_amount := level_2_amount
+        level_max := level_2
+    if (level_3_amount > max_amount and level_3_amount < max_amount_prev)
+        max_amount := level_3_amount
+        level_max := level_3
+    if (level_4_amount > max_amount and level_4_amount < max_amount_prev)
+        max_amount := level_4_amount
+        level_max := level_4
+    if (level_5_amount > max_amount and level_5_amount < max_amount_prev)
+        max_amount := level_5_amount
+        level_max := level_5
+    if (level_6_amount > max_amount and level_6_amount < max_amount_prev)
+        max_amount := level_6_amount
+        level_max := level_6
+    if (level_7_amount > max_amount and level_7_amount < max_amount_prev)
+        max_amount := level_7_amount
+        level_max := level_7
+    if (level_8_amount > max_amount and level_8_amount < max_amount_prev)
+        max_amount := level_8_amount
+        level_max := level_8
+    if (level_9_amount > max_amount and level_9_amount < max_amount_prev)
+        max_amount := level_9_amount
+        level_max := level_9
+    if (level_10_amount > max_amount and level_10_amount < max_amount_prev)
+        max_amount := level_10_amount
+        level_max := level_10
+    if (level_11_amount > max_amount and level_11_amount < max_amount_prev)
+        max_amount := level_11_amount
+        level_max := level_11
+    if (level_12_amount > max_amount and level_12_amount < max_amount_prev)
+        max_amount := level_12_amount
+        level_max := level_12
+    if (level_13_amount > max_amount and level_13_amount < max_amount_prev)
+        max_amount := level_13_amount
+        level_max := level_13
+    if (level_14_amount > max_amount and level_14_amount < max_amount_prev)
+        max_amount := level_14_amount
+        level_max := level_14
+    if (level_15_amount > max_amount and level_15_amount < max_amount_prev)
+        max_amount := level_15_amount
+        level_max := level_15
+    if (level_16_amount > max_amount and level_16_amount < max_amount_prev)
+        max_amount := level_16_amount
+        level_max := level_16
+    if (level_17_amount > max_amount and level_17_amount < max_amount_prev)
+        max_amount := level_17_amount
+        level_max := level_17
+    if (level_18_amount > max_amount and level_18_amount < max_amount_prev)
+        max_amount := level_18_amount
+        level_max := level_18
+    if (level_19_amount > max_amount and level_19_amount < max_amount_prev)
+        max_amount := level_19_amount
+        level_max := level_19
+    if (level_20_amount > max_amount and level_20_amount < max_amount_prev)
+        max_amount := level_20_amount
+        level_max := level_20
+    if (level_21_amount > max_amount and level_21_amount < max_amount_prev)
+        max_amount := level_21_amount
+        level_max := level_21
+    if (level_22_amount > max_amount and level_22_amount < max_amount_prev)
+        max_amount := level_22_amount
+        level_max := level_22
+    if (level_23_amount > max_amount and level_23_amount < max_amount_prev)
+        max_amount := level_23_amount
+        level_max := level_23
+    if (level_24_amount > max_amount and level_24_amount < max_amount_prev)
+        max_amount := level_24_amount
+        level_max := level_24
+    if (level_25_amount > max_amount and level_25_amount < max_amount_prev)
+        max_amount := level_25_amount
+        level_max := level_25
+    if (level_26_amount > max_amount and level_26_amount < max_amount_prev)
+        max_amount := level_26_amount
+        level_max := level_26
+    if (level_27_amount > max_amount and level_27_amount < max_amount_prev)
+        max_amount := level_27_amount
+        level_max := level_27
+    if (level_28_amount > max_amount and level_28_amount < max_amount_prev)
+        max_amount := level_28_amount
+        level_max := level_28
+    if (level_29_amount > max_amount and level_29_amount < max_amount_prev)
+        max_amount := level_29_amount
+        level_max := level_29
+    if (level_30_amount > max_amount and level_30_amount < max_amount_prev)
+        max_amount := level_30_amount
+        level_max := level_30
+
+    max_amount_3 := max_amount
+    level_max_3 := level_max
+    max_amount_prev := max_amount
+    max_amount := level_1_amount
+    level_max := level_1
+
+
+if (barstate.islast and value_level_amount >= 4)
+    if (level_2_amount > max_amount and level_2_amount < max_amount_prev)
+        max_amount := level_2_amount
+        level_max := level_2
+    if (level_3_amount > max_amount and level_3_amount < max_amount_prev)
+        max_amount := level_3_amount
+        level_max := level_3
+    if (level_4_amount > max_amount and level_4_amount < max_amount_prev)
+        max_amount := level_4_amount
+        level_max := level_4
+    if (level_5_amount > max_amount and level_5_amount < max_amount_prev)
+        max_amount := level_5_amount
+        level_max := level_5
+    if (level_6_amount > max_amount and level_6_amount < max_amount_prev)
+        max_amount := level_6_amount
+        level_max := level_6
+    if (level_7_amount > max_amount and level_7_amount < max_amount_prev)
+        max_amount := level_7_amount
+        level_max := level_7
+    if (level_8_amount > max_amount and level_8_amount < max_amount_prev)
+        max_amount := level_8_amount
+        level_max := level_8
+    if (level_9_amount > max_amount and level_9_amount < max_amount_prev)
+        max_amount := level_9_amount
+        level_max := level_9
+    if (level_10_amount > max_amount and level_10_amount < max_amount_prev)
+        max_amount := level_10_amount
+        level_max := level_10
+    if (level_11_amount > max_amount and level_11_amount < max_amount_prev)
+        max_amount := level_11_amount
+        level_max := level_11
+    if (level_12_amount > max_amount and level_12_amount < max_amount_prev)
+        max_amount := level_12_amount
+        level_max := level_12
+    if (level_13_amount > max_amount and level_13_amount < max_amount_prev)
+        max_amount := level_13_amount
+        level_max := level_13
+    if (level_14_amount > max_amount and level_14_amount < max_amount_prev)
+        max_amount := level_14_amount
+        level_max := level_14
+    if (level_15_amount > max_amount and level_15_amount < max_amount_prev)
+        max_amount := level_15_amount
+        level_max := level_15
+    if (level_16_amount > max_amount and level_16_amount < max_amount_prev)
+        max_amount := level_16_amount
+        level_max := level_16
+    if (level_17_amount > max_amount and level_17_amount < max_amount_prev)
+        max_amount := level_17_amount
+        level_max := level_17
+    if (level_18_amount > max_amount and level_18_amount < max_amount_prev)
+        max_amount := level_18_amount
+        level_max := level_18
+    if (level_19_amount > max_amount and level_19_amount < max_amount_prev)
+        max_amount := level_19_amount
+        level_max := level_19
+    if (level_20_amount > max_amount and level_20_amount < max_amount_prev)
+        max_amount := level_20_amount
+        level_max := level_20
+    if (level_21_amount > max_amount and level_21_amount < max_amount_prev)
+        max_amount := level_21_amount
+        level_max := level_21
+    if (level_22_amount > max_amount and level_22_amount < max_amount_prev)
+        max_amount := level_22_amount
+        level_max := level_22
+    if (level_23_amount > max_amount and level_23_amount < max_amount_prev)
+        max_amount := level_23_amount
+        level_max := level_23
+    if (level_24_amount > max_amount and level_24_amount < max_amount_prev)
+        max_amount := level_24_amount
+        level_max := level_24
+    if (level_25_amount > max_amount and level_25_amount < max_amount_prev)
+        max_amount := level_25_amount
+        level_max := level_25
+    if (level_26_amount > max_amount and level_26_amount < max_amount_prev)
+        max_amount := level_26_amount
+        level_max := level_26
+    if (level_27_amount > max_amount and level_27_amount < max_amount_prev)
+        max_amount := level_27_amount
+        level_max := level_27
+    if (level_28_amount > max_amount and level_28_amount < max_amount_prev)
+        max_amount := level_28_amount
+        level_max := level_28
+    if (level_29_amount > max_amount and level_29_amount < max_amount_prev)
+        max_amount := level_29_amount
+        level_max := level_29
+    if (level_30_amount > max_amount and level_30_amount < max_amount_prev)
+        max_amount := level_30_amount
+        level_max := level_30
+
+    max_amount_4 := max_amount
+    level_max_4 := level_max
+    max_amount_prev := max_amount
+    max_amount := level_1_amount
+    level_max := level_1
+
+
+if (barstate.islast and value_level_amount >= 5)
+    if (level_2_amount > max_amount and level_2_amount < max_amount_prev)
+        max_amount := level_2_amount
+        level_max := level_2
+    if (level_3_amount > max_amount and level_3_amount < max_amount_prev)
+        max_amount := level_3_amount
+        level_max := level_3
+    if (level_4_amount > max_amount and level_4_amount < max_amount_prev)
+        max_amount := level_4_amount
+        level_max := level_4
+    if (level_5_amount > max_amount and level_5_amount < max_amount_prev)
+        max_amount := level_5_amount
+        level_max := level_5
+    if (level_6_amount > max_amount and level_6_amount < max_amount_prev)
+        max_amount := level_6_amount
+        level_max := level_6
+    if (level_7_amount > max_amount and level_7_amount < max_amount_prev)
+        max_amount := level_7_amount
+        level_max := level_7
+    if (level_8_amount > max_amount and level_8_amount < max_amount_prev)
+        max_amount := level_8_amount
+        level_max := level_8
+    if (level_9_amount > max_amount and level_9_amount < max_amount_prev)
+        max_amount := level_9_amount
+        level_max := level_9
+    if (level_10_amount > max_amount and level_10_amount < max_amount_prev)
+        max_amount := level_10_amount
+        level_max := level_10
+    if (level_11_amount > max_amount and level_11_amount < max_amount_prev)
+        max_amount := level_11_amount
+        level_max := level_11
+    if (level_12_amount > max_amount and level_12_amount < max_amount_prev)
+        max_amount := level_12_amount
+        level_max := level_12
+    if (level_13_amount > max_amount and level_13_amount < max_amount_prev)
+        max_amount := level_13_amount
+        level_max := level_13
+    if (level_14_amount > max_amount and level_14_amount < max_amount_prev)
+        max_amount := level_14_amount
+        level_max := level_14
+    if (level_15_amount > max_amount and level_15_amount < max_amount_prev)
+        max_amount := level_15_amount
+        level_max := level_15
+    if (level_16_amount > max_amount and level_16_amount < max_amount_prev)
+        max_amount := level_16_amount
+        level_max := level_16
+    if (level_17_amount > max_amount and level_17_amount < max_amount_prev)
+        max_amount := level_17_amount
+        level_max := level_17
+    if (level_18_amount > max_amount and level_18_amount < max_amount_prev)
+        max_amount := level_18_amount
+        level_max := level_18
+    if (level_19_amount > max_amount and level_19_amount < max_amount_prev)
+        max_amount := level_19_amount
+        level_max := level_19
+    if (level_20_amount > max_amount and level_20_amount < max_amount_prev)
+        max_amount := level_20_amount
+        level_max := level_20
+    if (level_21_amount > max_amount and level_21_amount < max_amount_prev)
+        max_amount := level_21_amount
+        level_max := level_21
+    if (level_22_amount > max_amount and level_22_amount < max_amount_prev)
+        max_amount := level_22_amount
+        level_max := level_22
+    if (level_23_amount > max_amount and level_23_amount < max_amount_prev)
+        max_amount := level_23_amount
+        level_max := level_23
+    if (level_24_amount > max_amount and level_24_amount < max_amount_prev)
+        max_amount := level_24_amount
+        level_max := level_24
+    if (level_25_amount > max_amount and level_25_amount < max_amount_prev)
+        max_amount := level_25_amount
+        level_max := level_25
+    if (level_26_amount > max_amount and level_26_amount < max_amount_prev)
+        max_amount := level_26_amount
+        level_max := level_26
+    if (level_27_amount > max_amount and level_27_amount < max_amount_prev)
+        max_amount := level_27_amount
+        level_max := level_27
+    if (level_28_amount > max_amount and level_28_amount < max_amount_prev)
+        max_amount := level_28_amount
+        level_max := level_28
+    if (level_29_amount > max_amount and level_29_amount < max_amount_prev)
+        max_amount := level_29_amount
+        level_max := level_29
+    if (level_30_amount > max_amount and level_30_amount < max_amount_prev)
+        max_amount := level_30_amount
+        level_max := level_30
+
+    max_amount_5 := max_amount
+    level_max_5 := level_max
+    max_amount_prev := max_amount
+    max_amount := level_1_amount
+    level_max := level_1
+
+
+int line_x1 = 0
+float line_y = 0
+color line_color = color.red
+int current_amount = 0
+
+
+//a
+if (barstate.islast)
+    line_start = line.new(bar_index[bar_amount], level_1, bar_index[bar_amount], level_30, color=color.purple, width=1) 
+    line_1 = line.new(bar_index[bar_amount], level_1, bar_index[bar_amount-level_1_amount], level_1, color=color.white, width=1)
+    line_2 = line.new(bar_index[bar_amount], level_2, bar_index[bar_amount-level_2_amount], level_2, color=color.white, width=1)
+    line_3 = line.new(bar_index[bar_amount], level_3, bar_index[bar_amount-level_3_amount], level_3, color=color.white, width=1)    
+    line_4 = line.new(bar_index[bar_amount], level_4, bar_index[bar_amount-level_4_amount], level_4, color=color.white, width=1)    
+    line_5 = line.new(bar_index[bar_amount], level_5, bar_index[bar_amount-level_5_amount], level_5, color=color.white, width=1)    
+    line_6 = line.new(bar_index[bar_amount], level_6, bar_index[bar_amount-level_6_amount], level_6, color=color.white, width=1)    
+    line_7 = line.new(bar_index[bar_amount], level_7, bar_index[bar_amount-level_7_amount], level_7, color=color.white, width=1)
+    line_8 = line.new(bar_index[bar_amount], level_8, bar_index[bar_amount-level_8_amount], level_8, color=color.white, width=1)
+    line_9 = line.new(bar_index[bar_amount], level_9, bar_index[bar_amount-level_9_amount], level_9, color=color.white, width=1)
+    line_10 = line.new(bar_index[bar_amount], level_10, bar_index[bar_amount-level_10_amount], level_10, color=color.white, width=1)
+    line_11 = line.new(bar_index[bar_amount], level_11, bar_index[bar_amount-level_11_amount], level_11, color=color.white, width=1)
+    line_12 = line.new(bar_index[bar_amount], level_12, bar_index[bar_amount-level_12_amount], level_12, color=color.white, width=1)
+    line_13 = line.new(bar_index[bar_amount], level_13, bar_index[bar_amount-level_13_amount], level_13, color=color.white, width=1)
+    line_14 = line.new(bar_index[bar_amount], level_14, bar_index[bar_amount-level_14_amount], level_14, color=color.white, width=1)
+    line_15 = line.new(bar_index[bar_amount], level_15, bar_index[bar_amount-level_15_amount], level_15, color=color.white, width=1)
+    line_16 = line.new(bar_index[bar_amount], level_16, bar_index[bar_amount-level_16_amount], level_16, color=color.white, width=1)
+    line_17 = line.new(bar_index[bar_amount], level_17, bar_index[bar_amount-level_17_amount], level_17, color=color.white, width=1)
+    line_18 = line.new(bar_index[bar_amount], level_18, bar_index[bar_amount-level_18_amount], level_18, color=color.white, width=1)
+    line_19 = line.new(bar_index[bar_amount], level_19, bar_index[bar_amount-level_19_amount], level_19, color=color.white, width=1)
+    line_20 = line.new(bar_index[bar_amount], level_20, bar_index[bar_amount-level_20_amount], level_20, color=color.white, width=1)
+    line_21 = line.new(bar_index[bar_amount], level_21, bar_index[bar_amount-level_21_amount], level_21, color=color.white, width=1)
+    line_22 = line.new(bar_index[bar_amount], level_22, bar_index[bar_amount-level_22_amount], level_22, color=color.white, width=1)
+    line_23 = line.new(bar_index[bar_amount], level_23, bar_index[bar_amount-level_23_amount], level_23, color=color.white, width=1)
+    line_24 = line.new(bar_index[bar_amount], level_24, bar_index[bar_amount-level_24_amount], level_24, color=color.white, width=1)
+    line_25 = line.new(bar_index[bar_amount], level_25, bar_index[bar_amount-level_25_amount], level_25, color=color.white, width=1)
+    line_26 = line.new(bar_index[bar_amount], level_26, bar_index[bar_amount-level_26_amount], level_26, color=color.white, width=1)
+    line_27 = line.new(bar_index[bar_amount], level_27, bar_index[bar_amount-level_27_amount], level_27, color=color.white, width=1)
+    line_28 = line.new(bar_index[bar_amount], level_28, bar_index[bar_amount-level_28_amount], level_28, color=color.white, width=1)
+    line_29 = line.new(bar_index[bar_amount], level_29, bar_index[bar_amount-level_29_amount], level_29, color=color.white, width=1)
+    line_30 = line.new(bar_index[bar_amount], level_30, bar_index[bar_amount-level_30_amount], level_30, color=color.white, width=1)
+    //line_max_1 = line.new(bar_index[bar_amount-max_amount_1], level_max_1, bar_index[0], level_max_1, color=color.red, width=1)
+    //if (sup_res_level_amount >= 2)
+      //  line_max_2 = line.new(bar_index[bar_amount-max_amount_2], level_max_2, bar_index[0], level_max_2, color=color.orange, width=1)
+    //if (sup_res_level_amount >= 3)
+     //   line_max_3 = line.new(bar_index[bar_amount-max_amount_3], level_max_3, bar_index[0], level_max_3, color=color.yellow, width=1)
+    //if (sup_res_level_amount >= 4)
+      //  line_max_4 = line.new(bar_index[bar_amount-max_amount_4], level_max_4, bar_index[0], level_max_4, color=color.green, width=1)
+    //if (sup_res_level_amount >= 5)
+      //  line_max_5 = line.new(bar_index[bar_amount-max_amount_5], level_max_5, bar_index[0], level_max_5, color=color.blue, width=1)
+        
+    if (level_1_amount == max_amount_1)
+        line_max_1_level_1 = line.new(bar_index[bar_amount-level_1_amount], level_1, bar_index[0], level_1, color=color.red, width=1)
+    if (level_2_amount == max_amount_1)
+        line_max_1_level_2 = line.new(bar_index[bar_amount-level_2_amount], level_2, bar_index[0], level_2, color=color.red, width=1)
+    if (level_3_amount == max_amount_1)
+        line_max_1_level_3 = line.new(bar_index[bar_amount-level_3_amount], level_3, bar_index[0], level_3, color=color.red, width=1)    
+    if (level_4_amount == max_amount_1)
+        line_max_1_level_4 = line.new(bar_index[bar_amount-level_4_amount], level_4, bar_index[0], level_4, color=color.red, width=1)
+    if (level_5_amount == max_amount_1)
+        line_max_1_level_5 = line.new(bar_index[bar_amount-level_5_amount], level_5, bar_index[0], level_5, color=color.red, width=1)
+    if (level_6_amount == max_amount_1)
+        line_max_1_level_6 = line.new(bar_index[bar_amount-level_6_amount], level_6, bar_index[0], level_6, color=color.red, width=1)    
+    if (level_7_amount == max_amount_1)
+        line_max_1_level_7 = line.new(bar_index[bar_amount-level_7_amount], level_7, bar_index[0], level_7, color=color.red, width=1)
+    if (level_8_amount == max_amount_1)
+        line_max_1_level_8 = line.new(bar_index[bar_amount-level_8_amount], level_8, bar_index[0], level_8, color=color.red, width=1)
+    if (level_9_amount == max_amount_1)
+        line_max_1_level_9 = line.new(bar_index[bar_amount-level_9_amount], level_9, bar_index[0], level_9, color=color.red, width=1)
+    if (level_10_amount == max_amount_1)
+        line_max_1_level_10 = line.new(bar_index[bar_amount-level_10_amount], level_10, bar_index[0], level_10, color=color.red, width=1)
+    if (level_11_amount == max_amount_1)
+        line_max_1_level_11 = line.new(bar_index[bar_amount-level_11_amount], level_11, bar_index[0], level_11, color=color.red, width=1)
+    if (level_12_amount == max_amount_1)
+        line_max_1_level_12 = line.new(bar_index[bar_amount-level_12_amount], level_12, bar_index[0], level_12, color=color.red, width=1)
+    if (level_13_amount == max_amount_1)
+        line_max_1_level_13 = line.new(bar_index[bar_amount-level_13_amount], level_13, bar_index[0], level_13, color=color.red, width=1)
+    if (level_14_amount == max_amount_1)
+        line_max_1_level_14 = line.new(bar_index[bar_amount-level_14_amount], level_14, bar_index[0], level_14, color=color.red, width=1)
+    if (level_15_amount == max_amount_1)
+        line_max_1_level_15 = line.new(bar_index[bar_amount-level_15_amount], level_15, bar_index[0], level_15, color=color.red, width=1)
+    if (level_16_amount == max_amount_1)
+        line_max_1_level_16 = line.new(bar_index[bar_amount-level_16_amount], level_16, bar_index[0], level_16, color=color.red, width=1)
+    if (level_17_amount == max_amount_1)
+        line_max_1_level_17 = line.new(bar_index[bar_amount-level_17_amount], level_17, bar_index[0], level_17, color=color.red, width=1)
+    if (level_18_amount == max_amount_1)
+        line_max_1_level_18 = line.new(bar_index[bar_amount-level_18_amount], level_18, bar_index[0], level_18, color=color.red, width=1)
+    if (level_19_amount == max_amount_1)
+        line_max_1_level_19 = line.new(bar_index[bar_amount-level_19_amount], level_19, bar_index[0], level_19, color=color.red, width=1)
+    if (level_20_amount == max_amount_1)
+        line_max_1_level_20 = line.new(bar_index[bar_amount-level_20_amount], level_20, bar_index[0], level_20, color=color.red, width=1)
+    if (level_21_amount == max_amount_1)
+        line_max_1_level_21 = line.new(bar_index[bar_amount-level_21_amount], level_21, bar_index[0], level_21, color=color.red, width=1)
+    if (level_22_amount == max_amount_1)
+        line_max_1_level_22 = line.new(bar_index[bar_amount-level_22_amount], level_22, bar_index[0], level_22, color=color.red, width=1)
+    if (level_23_amount == max_amount_1)
+        line_max_1_level_23 = line.new(bar_index[bar_amount-level_23_amount], level_23, bar_index[0], level_23, color=color.red, width=1)
+    if (level_24_amount == max_amount_1)
+        line_max_1_level_24 = line.new(bar_index[bar_amount-level_24_amount], level_24, bar_index[0], level_24, color=color.red, width=1)
+    if (level_25_amount == max_amount_1)
+        line_max_1_level_25 = line.new(bar_index[bar_amount-level_25_amount], level_25, bar_index[0], level_25, color=color.red, width=1)
+    if (level_26_amount == max_amount_1)
+        line_max_1_level_26 = line.new(bar_index[bar_amount-level_26_amount], level_26, bar_index[0], level_26, color=color.red, width=1)
+    if (level_27_amount == max_amount_1)
+        line_max_1_level_27 = line.new(bar_index[bar_amount-level_27_amount], level_27, bar_index[0], level_27, color=color.red, width=1)
+    if (level_28_amount == max_amount_1)
+        line_max_1_level_28 = line.new(bar_index[bar_amount-level_28_amount], level_28, bar_index[0], level_28, color=color.red, width=1)
+    if (level_29_amount == max_amount_1)
+        line_max_1_level_29 = line.new(bar_index[bar_amount-level_29_amount], level_29, bar_index[0], level_29, color=color.red, width=1)
+    if (level_30_amount == max_amount_1)
+        line_max_1_level_30 = line.new(bar_index[bar_amount-level_30_amount], level_30, bar_index[0], level_30, color=color.red, width=1)
+
+    if (value_level_amount >= 2)
+        if (level_1_amount == max_amount_2)
+            line_x1 := bar_amount - level_1_amount
+            line_y := level_1
+            line_max_2_level_1 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=color.orange, width=1)
+        if (level_2_amount == max_amount_2)
+            line_x1 := bar_amount - level_2_amount
+            line_y := level_2
+            line_max_2_level_2 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=color.orange, width=1)
+        if (level_3_amount == max_amount_2)
+            line_x1 := bar_amount - level_3_amount
+            line_y := level_3
+            line_max_2_level_3 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=color.orange, width=1)
+        if (level_4_amount == max_amount_2)
+            line_x1 := bar_amount - level_4_amount
+            line_y := level_4
+            line_max_2_level_4 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=color.orange, width=1)
+        if (level_5_amount == max_amount_2)
+            line_x1 := bar_amount - level_5_amount
+            line_y := level_5
+            line_max_2_level_5 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=color.orange, width=1)
+        if (level_6_amount == max_amount_2)
+            line_x1 := bar_amount - level_6_amount
+            line_y := level_6
+            line_max_2_level_6 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=color.orange, width=1)
+        if (level_7_amount == max_amount_2)
+            line_x1 := bar_amount - level_7_amount
+            line_y := level_7
+            line_max_2_level_7 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=color.orange, width=1)
+        if (level_8_amount == max_amount_2)
+            line_x1 := bar_amount - level_8_amount
+            line_y := level_8
+            line_max_2_level_8 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=color.orange, width=1)
+        if (level_9_amount == max_amount_2)
+            line_x1 := bar_amount - level_9_amount
+            line_y := level_9
+            line_max_2_level_9 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=color.orange, width=1)
+        if (level_10_amount == max_amount_2)
+            line_x1 := bar_amount - level_10_amount
+            line_y := level_10
+            line_max_2_level_10 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=color.orange, width=1)
+        if (level_11_amount == max_amount_2)
+            line_x1 := bar_amount - level_11_amount
+            line_y := level_11
+            line_max_2_level_11 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=color.orange, width=1)
+        if (level_12_amount == max_amount_2)
+            line_x1 := bar_amount - level_12_amount
+            line_y := level_12
+            line_max_2_level_12 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=color.orange, width=1)
+        if (level_13_amount == max_amount_2)
+            line_x1 := bar_amount - level_13_amount
+            line_y := level_13
+            line_max_2_level_13 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=color.orange, width=1)
+        if (level_14_amount == max_amount_2)
+            line_x1 := bar_amount - level_14_amount
+            line_y := level_14
+            line_max_2_level_14 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=color.orange, width=1)
+        if (level_15_amount == max_amount_2)
+            line_x1 := bar_amount - level_15_amount
+            line_y := level_15
+            line_max_2_level_15 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=color.orange, width=1)
+        if (level_16_amount == max_amount_2)
+            line_x1 := bar_amount - level_16_amount
+            line_y := level_16
+            line_max_2_level_16 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=color.orange, width=1)
+        if (level_17_amount == max_amount_2)
+            line_x1 := bar_amount - level_17_amount
+            line_y := level_17
+            line_max_2_level_17 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=color.orange, width=1)
+        if (level_18_amount == max_amount_2)
+            line_x1 := bar_amount - level_18_amount
+            line_y := level_18
+            line_max_2_level_18 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=color.orange, width=1)
+        if (level_19_amount == max_amount_2)
+            line_x1 := bar_amount - level_19_amount
+            line_y := level_19
+            line_max_2_level_19 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=color.orange, width=1)
+        if (level_20_amount == max_amount_2)
+            line_x1 := bar_amount - level_20_amount
+            line_y := level_20
+            line_max_2_level_20 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=color.orange, width=1)
+        if (level_21_amount == max_amount_2)
+            line_x1 := bar_amount - level_21_amount
+            line_y := level_21
+            line_max_2_level_21 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=color.orange, width=1)
+        if (level_22_amount == max_amount_2)
+            line_x1 := bar_amount - level_22_amount
+            line_y := level_22
+            line_max_2_level_22 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=color.orange, width=1)
+        if (level_23_amount == max_amount_2)
+            line_x1 := bar_amount - level_23_amount
+            line_y := level_23
+            line_max_2_level_23 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=color.orange, width=1)
+        if (level_24_amount == max_amount_2)
+            line_x1 := bar_amount - level_24_amount
+            line_y := level_24
+            line_max_2_level_24 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=color.orange, width=1)
+        if (level_25_amount == max_amount_2)
+            line_x1 := bar_amount - level_25_amount
+            line_y := level_25
+            line_max_2_level_25 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=color.orange, width=1)
+        if (level_26_amount == max_amount_2)
+            line_x1 := bar_amount - level_26_amount
+            line_y := level_26
+            line_max_2_level_26 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=color.orange, width=1)
+        if (level_27_amount == max_amount_2)
+            line_x1 := bar_amount - level_27_amount
+            line_y := level_27
+            line_max_2_level_27 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=color.orange, width=1)
+        if (level_28_amount == max_amount_2)
+            line_x1 := bar_amount - level_28_amount
+            line_y := level_28
+            line_max_2_level_28 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=color.orange, width=1)
+        if (level_29_amount == max_amount_2)
+            line_x1 := bar_amount - level_29_amount
+            line_y := level_29
+            line_max_2_level_29 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=color.orange, width=1)
+        if (level_30_amount == max_amount_2)
+            line_x1 := bar_amount - level_30_amount
+            line_y := level_30
+            line_max_2_level_30 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=color.orange, width=1)
+     
+    if (value_level_amount >= 3)
+        if (level_1_amount == max_amount_3)
+            line_x1 := bar_amount - level_1_amount
+            line_y := level_1
+            line_max_2_level_1 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=color.yellow, width=1)
+        if (level_2_amount == max_amount_3)
+            line_x1 := bar_amount - level_2_amount
+            line_y := level_2
+            line_max_2_level_2 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=color.yellow, width=1)
+        if (level_3_amount == max_amount_3)
+            line_x1 := bar_amount - level_3_amount
+            line_y := level_3
+            line_max_2_level_3 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=color.yellow, width=1)
+        if (level_4_amount == max_amount_3)
+            line_x1 := bar_amount - level_4_amount
+            line_y := level_4
+            line_max_2_level_4 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=color.yellow, width=1)
+        if (level_5_amount == max_amount_3)
+            line_x1 := bar_amount - level_5_amount
+            line_y := level_5
+            line_max_2_level_5 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=color.yellow, width=1)
+        if (level_6_amount == max_amount_3)
+            line_x1 := bar_amount - level_6_amount
+            line_y := level_6
+            line_max_2_level_6 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=color.yellow, width=1)
+        if (level_7_amount == max_amount_3)
+            line_x1 := bar_amount - level_7_amount
+            line_y := level_7
+            line_max_2_level_7 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=color.yellow, width=1)
+        if (level_8_amount == max_amount_3)
+            line_x1 := bar_amount - level_8_amount
+            line_y := level_8
+            line_max_2_level_8 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=color.yellow, width=1)
+        if (level_9_amount == max_amount_3)
+            line_x1 := bar_amount - level_9_amount
+            line_y := level_9
+            line_max_2_level_9 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=color.yellow, width=1)
+        if (level_10_amount == max_amount_3)
+            line_x1 := bar_amount - level_10_amount
+            line_y := level_10
+            line_max_2_level_10 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=color.yellow, width=1)
+        if (level_11_amount == max_amount_3)
+            line_x1 := bar_amount - level_11_amount
+            line_y := level_11
+            line_max_2_level_11 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=color.yellow, width=1)
+        if (level_12_amount == max_amount_3)
+            line_x1 := bar_amount - level_12_amount
+            line_y := level_12
+            line_max_2_level_12 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=color.yellow, width=1)
+        if (level_13_amount == max_amount_3)
+            line_x1 := bar_amount - level_13_amount
+            line_y := level_13
+            line_max_2_level_13 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=color.yellow, width=1)
+        if (level_14_amount == max_amount_3)
+            line_x1 := bar_amount - level_14_amount
+            line_y := level_14
+            line_max_2_level_14 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=color.yellow, width=1)
+        if (level_15_amount == max_amount_3)
+            line_x1 := bar_amount - level_15_amount
+            line_y := level_15
+            line_max_2_level_15 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=color.yellow, width=1)
+        if (level_16_amount == max_amount_3)
+            line_x1 := bar_amount - level_16_amount
+            line_y := level_16
+            line_max_2_level_16 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=color.yellow, width=1)
+        if (level_17_amount == max_amount_3)
+            line_x1 := bar_amount - level_17_amount
+            line_y := level_17
+            line_max_2_level_17 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=color.yellow, width=1)
+        if (level_18_amount == max_amount_3)
+            line_x1 := bar_amount - level_18_amount
+            line_y := level_18
+            line_max_2_level_18 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=color.yellow, width=1)
+        if (level_19_amount == max_amount_3)
+            line_x1 := bar_amount - level_19_amount
+            line_y := level_19
+            line_max_2_level_19 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=color.yellow, width=1)
+        if (level_20_amount == max_amount_3)
+            line_x1 := bar_amount - level_20_amount
+            line_y := level_20
+            line_max_2_level_20 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=color.yellow, width=1)
+        if (level_21_amount == max_amount_3)
+            line_x1 := bar_amount - level_21_amount
+            line_y := level_21
+            line_max_2_level_21 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=color.yellow, width=1)
+        if (level_22_amount == max_amount_3)
+            line_x1 := bar_amount - level_22_amount
+            line_y := level_22
+            line_max_2_level_22 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=color.yellow, width=1)
+        if (level_23_amount == max_amount_3)
+            line_x1 := bar_amount - level_23_amount
+            line_y := level_23
+            line_max_2_level_23 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=color.yellow, width=1)
+        if (level_24_amount == max_amount_3)
+            line_x1 := bar_amount - level_24_amount
+            line_y := level_24
+            line_max_2_level_24 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=color.yellow, width=1)
+        if (level_25_amount == max_amount_3)
+            line_x1 := bar_amount - level_25_amount
+            line_y := level_25
+            line_max_2_level_25 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=color.yellow, width=1)
+        if (level_26_amount == max_amount_3)
+            line_x1 := bar_amount - level_26_amount
+            line_y := level_26
+            line_max_2_level_26 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=color.yellow, width=1)
+        if (level_27_amount == max_amount_3)
+            line_x1 := bar_amount - level_27_amount
+            line_y := level_27
+            line_max_2_level_27 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=color.yellow, width=1)
+        if (level_28_amount == max_amount_3)
+            line_x1 := bar_amount - level_28_amount
+            line_y := level_28
+            line_max_2_level_28 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=color.yellow, width=1)
+        if (level_29_amount == max_amount_3)
+            line_x1 := bar_amount - level_29_amount
+            line_y := level_29
+            line_max_2_level_29 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=color.yellow, width=1)
+        if (level_30_amount == max_amount_3)
+            line_x1 := bar_amount - level_30_amount
+            line_y := level_30
+            line_max_2_level_30 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=color.yellow, width=1)
+    
+    if (value_level_amount >= 4)
+        line_color := color.green
+        current_amount := max_amount_4
+        if (level_1_amount == current_amount)
+            line_x1 := bar_amount - level_1_amount
+            line_y := level_1
+            line_max_2_level_1 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=line_color, width=1)
+        if (level_2_amount == current_amount)
+            line_x1 := bar_amount - level_2_amount
+            line_y := level_2
+            line_max_2_level_2 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=line_color, width=1)
+        if (level_3_amount == current_amount)
+            line_x1 := bar_amount - level_3_amount
+            line_y := level_3
+            line_max_2_level_3 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=line_color, width=1)
+        if (level_4_amount == current_amount)
+            line_x1 := bar_amount - level_4_amount
+            line_y := level_4
+            line_max_2_level_4 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=line_color, width=1)
+        if (level_5_amount == current_amount)
+            line_x1 := bar_amount - level_5_amount
+            line_y := level_5
+            line_max_2_level_5 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=line_color, width=1)
+        if (level_6_amount == current_amount)
+            line_x1 := bar_amount - level_6_amount
+            line_y := level_6
+            line_max_2_level_6 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=line_color, width=1)
+        if (level_7_amount == current_amount)
+            line_x1 := bar_amount - level_7_amount
+            line_y := level_7
+            line_max_2_level_7 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=line_color, width=1)
+        if (level_8_amount == current_amount)
+            line_x1 := bar_amount - level_8_amount
+            line_y := level_8
+            line_max_2_level_8 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=line_color, width=1)
+        if (level_9_amount == current_amount)
+            line_x1 := bar_amount - level_9_amount
+            line_y := level_9
+            line_max_2_level_9 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=line_color, width=1)
+        if (level_10_amount == current_amount)
+            line_x1 := bar_amount - level_10_amount
+            line_y := level_10
+            line_max_2_level_10 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=line_color, width=1)
+        if (level_11_amount == current_amount)
+            line_x1 := bar_amount - level_11_amount
+            line_y := level_11
+            line_max_2_level_11 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=line_color, width=1)
+        if (level_12_amount == current_amount)
+            line_x1 := bar_amount - level_12_amount
+            line_y := level_12
+            line_max_2_level_12 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=line_color, width=1)
+        if (level_13_amount == current_amount)
+            line_x1 := bar_amount - level_13_amount
+            line_y := level_13
+            line_max_2_level_13 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=line_color, width=1)
+        if (level_14_amount == current_amount)
+            line_x1 := bar_amount - level_14_amount
+            line_y := level_14
+            line_max_2_level_14 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=line_color, width=1)
+        if (level_15_amount == current_amount)
+            line_x1 := bar_amount - level_15_amount
+            line_y := level_15
+            line_max_2_level_15 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=line_color, width=1)
+        if (level_16_amount == current_amount)
+            line_x1 := bar_amount - level_16_amount
+            line_y := level_16
+            line_max_2_level_16 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=line_color, width=1)
+        if (level_17_amount == current_amount)
+            line_x1 := bar_amount - level_17_amount
+            line_y := level_17
+            line_max_2_level_17 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=line_color, width=1)
+        if (level_18_amount == current_amount)
+            line_x1 := bar_amount - level_18_amount
+            line_y := level_18
+            line_max_2_level_18 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=line_color, width=1)
+        if (level_19_amount == current_amount)
+            line_x1 := bar_amount - level_19_amount
+            line_y := level_19
+            line_max_2_level_19 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=line_color, width=1)
+        if (level_20_amount == current_amount)
+            line_x1 := bar_amount - level_20_amount
+            line_y := level_20
+            line_max_2_level_20 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=line_color, width=1)
+        if (level_21_amount == current_amount)
+            line_x1 := bar_amount - level_21_amount
+            line_y := level_21
+            line_max_2_level_21 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=line_color, width=1)
+        if (level_22_amount == current_amount)
+            line_x1 := bar_amount - level_22_amount
+            line_y := level_22
+            line_max_2_level_22 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=line_color, width=1)
+        if (level_23_amount == current_amount)
+            line_x1 := bar_amount - level_23_amount
+            line_y := level_23
+            line_max_2_level_23 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=line_color, width=1)
+        if (level_24_amount == current_amount)
+            line_x1 := bar_amount - level_24_amount
+            line_y := level_24
+            line_max_2_level_24 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=line_color, width=1)
+        if (level_25_amount == current_amount)
+            line_x1 := bar_amount - level_25_amount
+            line_y := level_25
+            line_max_2_level_25 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=line_color, width=1)
+        if (level_26_amount == current_amount)
+            line_x1 := bar_amount - level_26_amount
+            line_y := level_26
+            line_max_2_level_26 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=line_color, width=1)
+        if (level_27_amount == current_amount)
+            line_x1 := bar_amount - level_27_amount
+            line_y := level_27
+            line_max_2_level_27 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=line_color, width=1)
+        if (level_28_amount == current_amount)
+            line_x1 := bar_amount - level_28_amount
+            line_y := level_28
+            line_max_2_level_28 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=line_color, width=1)
+        if (level_29_amount == current_amount)
+            line_x1 := bar_amount - level_29_amount
+            line_y := level_29
+            line_max_2_level_29 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=line_color, width=1)
+        if (level_30_amount == current_amount)
+            line_x1 := bar_amount - level_30_amount
+            line_y := level_30
+            line_max_2_level_30 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=line_color, width=1)
+
+    if (value_level_amount >= 5)
+        line_color := color.blue
+        current_amount := max_amount_5
+        if (level_1_amount == current_amount)
+            line_x1 := bar_amount - level_1_amount
+            line_y := level_1
+            line_max_2_level_1 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=line_color, width=1)
+        if (level_2_amount == current_amount)
+            line_x1 := bar_amount - level_2_amount
+            line_y := level_2
+            line_max_2_level_2 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=line_color, width=1)
+        if (level_3_amount == current_amount)
+            line_x1 := bar_amount - level_3_amount
+            line_y := level_3
+            line_max_2_level_3 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=line_color, width=1)
+        if (level_4_amount == current_amount)
+            line_x1 := bar_amount - level_4_amount
+            line_y := level_4
+            line_max_2_level_4 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=line_color, width=1)
+        if (level_5_amount == current_amount)
+            line_x1 := bar_amount - level_5_amount
+            line_y := level_5
+            line_max_2_level_5 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=line_color, width=1)
+        if (level_6_amount == current_amount)
+            line_x1 := bar_amount - level_6_amount
+            line_y := level_6
+            line_max_2_level_6 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=line_color, width=1)
+        if (level_7_amount == current_amount)
+            line_x1 := bar_amount - level_7_amount
+            line_y := level_7
+            line_max_2_level_7 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=line_color, width=1)
+        if (level_8_amount == current_amount)
+            line_x1 := bar_amount - level_8_amount
+            line_y := level_8
+            line_max_2_level_8 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=line_color, width=1)
+        if (level_9_amount == current_amount)
+            line_x1 := bar_amount - level_9_amount
+            line_y := level_9
+            line_max_2_level_9 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=line_color, width=1)
+        if (level_10_amount == current_amount)
+            line_x1 := bar_amount - level_10_amount
+            line_y := level_10
+            line_max_2_level_10 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=line_color, width=1)
+        if (level_11_amount == current_amount)
+            line_x1 := bar_amount - level_11_amount
+            line_y := level_11
+            line_max_2_level_11 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=line_color, width=1)
+        if (level_12_amount == current_amount)
+            line_x1 := bar_amount - level_12_amount
+            line_y := level_12
+            line_max_2_level_12 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=line_color, width=1)
+        if (level_13_amount == current_amount)
+            line_x1 := bar_amount - level_13_amount
+            line_y := level_13
+            line_max_2_level_13 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=line_color, width=1)
+        if (level_14_amount == current_amount)
+            line_x1 := bar_amount - level_14_amount
+            line_y := level_14
+            line_max_2_level_14 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=line_color, width=1)
+        if (level_15_amount == current_amount)
+            line_x1 := bar_amount - level_15_amount
+            line_y := level_15
+            line_max_2_level_15 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=line_color, width=1)
+        if (level_16_amount == current_amount)
+            line_x1 := bar_amount - level_16_amount
+            line_y := level_16
+            line_max_2_level_16 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=line_color, width=1)
+        if (level_17_amount == current_amount)
+            line_x1 := bar_amount - level_17_amount
+            line_y := level_17
+            line_max_2_level_17 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=line_color, width=1)
+        if (level_18_amount == current_amount)
+            line_x1 := bar_amount - level_18_amount
+            line_y := level_18
+            line_max_2_level_18 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=line_color, width=1)
+        if (level_19_amount == current_amount)
+            line_x1 := bar_amount - level_19_amount
+            line_y := level_19
+            line_max_2_level_19 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=line_color, width=1)
+        if (level_20_amount == current_amount)
+            line_x1 := bar_amount - level_20_amount
+            line_y := level_20
+            line_max_2_level_20 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=line_color, width=1)
+        if (level_21_amount == current_amount)
+            line_x1 := bar_amount - level_21_amount
+            line_y := level_21
+            line_max_2_level_21 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=line_color, width=1)
+        if (level_22_amount == current_amount)
+            line_x1 := bar_amount - level_22_amount
+            line_y := level_22
+            line_max_2_level_22 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=line_color, width=1)
+        if (level_23_amount == current_amount)
+            line_x1 := bar_amount - level_23_amount
+            line_y := level_23
+            line_max_2_level_23 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=line_color, width=1)
+        if (level_24_amount == current_amount)
+            line_x1 := bar_amount - level_24_amount
+            line_y := level_24
+            line_max_2_level_24 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=line_color, width=1)
+        if (level_25_amount == current_amount)
+            line_x1 := bar_amount - level_25_amount
+            line_y := level_25
+            line_max_2_level_25 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=line_color, width=1)
+        if (level_26_amount == current_amount)
+            line_x1 := bar_amount - level_26_amount
+            line_y := level_26
+            line_max_2_level_26 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=line_color, width=1)
+        if (level_27_amount == current_amount)
+            line_x1 := bar_amount - level_27_amount
+            line_y := level_27
+            line_max_2_level_27 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=line_color, width=1)
+        if (level_28_amount == current_amount)
+            line_x1 := bar_amount - level_28_amount
+            line_y := level_28
+            line_max_2_level_28 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=line_color, width=1)
+        if (level_29_amount == current_amount)
+            line_x1 := bar_amount - level_29_amount
+            line_y := level_29
+            line_max_2_level_29 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=line_color, width=1)
+        if (level_30_amount == current_amount)
+            line_x1 := bar_amount - level_30_amount
+            line_y := level_30
+            line_max_2_level_30 = line.new(bar_index[line_x1], line_y, bar_index[0], line_y, color=line_color, width=1)
+
+
+//plot(n, color=na, style=line)
+//lin(x1,x2,y1,y2) => n < x1 or n > x2 ? na : y1 + (y2 - y1) / (x2 - x1) * (n - x1)
+
+//plot(lin(bar_index, level_1, bar_index[level_1_amount], level_1), color=#ff00ff, linewidth=1, style=line, transp=0)
+//plot(lin(bar_index, level_2, bar_index[level_2_amount], level_2), color=#ff00ff, linewidth=1, style=line, transp=0)
+
+
+//plot(line_1, title='level_1', style=plot.style_line)
+//plot(line_2, title='level_1', style=plot.style_line)
